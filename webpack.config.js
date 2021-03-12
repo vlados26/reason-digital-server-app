@@ -7,7 +7,6 @@ module.exports = {
     },
     mode: 'development',
     entry: {
-        path: __dirname + './server/server.js',
         app: ['@babel/polyfill', './server/server.js'],
     },
     output: {
