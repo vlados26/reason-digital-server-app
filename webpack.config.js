@@ -5,6 +5,7 @@ module.exports = {
         fs: 'empty',
         net: 'empty',
     },
+    mode: 'development',
     entry: {
         app: ['@babel/polyfill', './server/server.js'],
     },
