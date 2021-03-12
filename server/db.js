@@ -1,4 +1,4 @@
-import { connect, connection, connections } from 'mongoose';
+const { connect, connection, connections } = require('mongoose');
 const { db_url } = require('./config');
 
 const db = connect(db_url, {
@@ -20,4 +20,4 @@ connection.on('open', () => {
     );
 });
 
-export default db;
+module.exports = db;

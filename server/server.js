@@ -1,5 +1,5 @@
-import { hostname, port } from './config';
-import './db';
+require('./db');
+const { hostname, port } = require('./config');
 const cors = require('cors');
 const express = require('express');
 const http = require('http');
@@ -13,8 +13,6 @@ app.use(cors());
 app.use(express.json());
 app.use('/auth', authRoutes);
 
-// server.listen(listeningPort, hostname, () =>
-//     console.log(`Server running at http://${hostname}:${port}/`)
-// );
-
-module.exports.handler = serverless(app);
+server.listen(listeningPort, hostname, () =>
+    console.log(`Server running at http://${hostname}:${port}/`)
+);

@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { private_key } = require('../config');
-import { hostname, port } from '../config';
-import AuthModel from '../models/auth-model';
+const { hostname, port } = require('../config');
+const AuthModel = require('../models/auth-model');
 
 const authMiddleware = async (req, res, next) => {
     try {

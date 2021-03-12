@@ -8,9 +8,10 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
+        "dev": "nodemon server/server.js",
+        "start": "node server/server.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server --output-public-path=/build/  --mode development --progress --open --hot",
-        "build": "webpack --mode production --progress"
+        "heroku-postbuild": "npm run build"
     },
     "author": "Vlad",
     "license": "ISC",

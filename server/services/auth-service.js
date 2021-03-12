@@ -1,5 +1,5 @@
-import AuthModel from '../models/auth-model';
-import jwt from 'jsonwebtoken';
+const AuthModel = require('../models/auth-model');
+const jwt = require('jsonwebtoken');
 const { private_key } = require('../config');
 const bcrypt = require('bcryptjs');
 
