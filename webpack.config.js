@@ -7,11 +7,12 @@ module.exports = {
     },
     mode: 'development',
     entry: {
+        path: __dirname + './server/server.js',
         app: ['@babel/polyfill', './server/server.js'],
     },
     output: {
-        path: path.resolve(__dirname, 'build'),
         filename: 'app.bundle.js',
+        path: __dirname + '/dist',
     },
     module: {
         rules: [
