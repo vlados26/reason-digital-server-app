@@ -12,6 +12,6 @@ app.use(cors());
 app.use(express.json());
 app.use('/auth', authRoutes);
 
-server.listen(port, hostname, () =>
+server.listen(process.env.PORT || port, hostname, () =>
     console.log(`Server running at http://${hostname}:${port}/`)
 );
