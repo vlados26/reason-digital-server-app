@@ -4,16 +4,18 @@
         "npm": "6.14.11"
     },
     "name": "server-app",
+    "main": "server.js",
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "start": "nodemon --exec babel-node ./server/server.js",
-        "build": "babel . -d .dist --ignore=\"node_modules\"",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "webpack-dev-server --output-public-path=/build/  --mode development --progress --open --hot",
+        "build": "webpack --mode production --progress"
     },
     "author": "Vlad",
     "license": "ISC",
     "dependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.13.0",
         "@hapi/joi": "^17.1.1",
         "babel-cli": "^6.26.0",
         "bcryptjs": "^2.4.3",
@@ -29,10 +31,12 @@
         "uuid": "^7.0.3"
     },
     "devDependencies": {
-        "@babel/cli": "^7.13.10",
-        "@babel/core": "^7.13.10",
-        "@babel/node": "^7.13.10",
-        "@babel/plugin-proposal-class-properties": "^7.8.3",
-        "@babel/preset-env": "^7.13.10"
+        "@babel/core": "^7.4.3",
+        "@babel/polyfill": "^7.12.1",
+        "@babel/preset-env": "^7.4.3",
+        "babel-loader": "^8.0.5",
+        "webpack": "^4.16.1",
+        "webpack-cli": "^3.0.8",
+        "webpack-dev-server": "^3.1.10"
     }
 }

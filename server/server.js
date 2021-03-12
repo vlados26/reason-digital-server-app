@@ -4,6 +4,7 @@ const cors = require('cors');
 const express = require('express');
 const http = require('http');
 const { authRoutes } = require('./routes/index');
+const listeningPort = process.env.PORT || port;
 
 const app = express();
 const server = http.createServer(app);
@@ -12,6 +13,6 @@ app.use(cors());
 app.use(express.json());
 app.use('/auth', authRoutes);
 
-server.listen(process.env.PORT || port, hostname, () =>
+server.listen(listeningPort, hostname, () =>
     console.log(`Server running at http://${hostname}:${port}/`)
 );
