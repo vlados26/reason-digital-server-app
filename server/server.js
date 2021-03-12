@@ -4,7 +4,7 @@ const cors = require('cors');
 const express = require('express');
 const http = require('http');
 const { authRoutes } = require('./routes/index');
-const listeningPort = process.env.PORT || port;
+const listeningPort = process.env.PORT || 5000;
 
 const app = express();
 const server = http.createServer(app);
