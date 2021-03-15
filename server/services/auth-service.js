@@ -22,13 +22,13 @@ module.exports = class AuthService {
         const customer = await AuthModel.findOne({ email });
 
         if (!customer) {
-            throw new Error('Customer not found');
+            throw new Error('Wrong email or password, please try again');
         }
 
         const isMatch = await bcrypt.compare(password, customer.password);
 
         if (!isMatch) {
-            throw new Error('wrong email or password, please try again');
+            throw new Error('Wrong email or password, please try again');
         }
 
         const token = jwt.sign({ customerId: customer._id }, private_key, {

@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const { private_key } = require('../config');
 const { hostname, port } = require('../config');
 const AuthModel = require('../models/auth-model');
+const { serverErrorResponse } = require('../utils');
 
 const authMiddleware = async (req, res, next) => {
     try {
@@ -24,8 +25,9 @@ const authMiddleware = async (req, res, next) => {
         req.customer = customer;
         next();
     } catch (err) {
-        console.log(err);
-        res.status(401).json({ message: `no authorization with err: ${err}` });
+        serverErrorResponse(res, 401, {
+            message: `no authorization with err: ${err}`,
+        });
     }
 };
 

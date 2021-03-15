@@ -1,5 +1,5 @@
 require('./db');
-const { hostname, port } = require('./config');
+const { port } = require('./config');
 const cors = require('cors');
 const express = require('express');
 const http = require('http');
@@ -12,6 +12,4 @@ app.use(cors());
 app.use(express.json());
 app.use('/auth', authRoutes);
 
-server.listen(process.env.PORT || port, () =>
-    console.log(`Server running at http://${hostname}:${port}/`)
-);
+server.listen(process.env.PORT || port);
